@@ -1,0 +1,11 @@
+Two examples of the forparse use.
+The first example reads the input on the command line :
+
+./readthecmdline v_int=1 v_real=1. v_string=1.
+
+The second example reads the input from a file :
+
+./readinputinafile filename=input.dat
+
+In both cases, no specific order is needed on the command line
+ or in the file.

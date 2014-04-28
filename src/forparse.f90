@@ -30,6 +30,28 @@ implicit none
 contains
 
 !######################################################################
+function helpisneeded(keyword)
+
+  character*(*) :: keyword
+  logical :: helpisneeded
+
+  integer :: n,nl
+  character(100) :: line     
+
+  helpisneeded=.false.
+  nl=len_trim(keyword)
+  n=command_argument_count()
+  if (n == 0 .and. nl == 0) then
+     helpisneeded=.true.
+     return
+  endif
+  if (n == 1 .and. nl /= 0) then
+     call get_command_argument(n,line)
+     helpisneeded=(keyword == line(1:nl))
+  endif
+  return
+end function helpisneeded
+!######################################################################
 function parse_real(keyword,value,nit)
 
   real :: value

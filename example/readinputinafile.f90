@@ -7,6 +7,11 @@ implicit none
    real*4 :: fdummy
    character*30 :: sdummy,fname
 
+   if (helpisneeded('')) then
+      write(0,*) "usage"
+      write(0,*) "   readinputinafile filename=input.dat"
+      stop
+   endif
    if (parse_arg('filename',fname) /= PARSE_OK) stop 'problem reading filename'
    open(nit,file=fname)
    if (parse_arg('v_int',idummy,nit) /= PARSE_OK) stop 'problem reading v_int'

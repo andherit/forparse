@@ -7,5 +7,7 @@ The second example reads the input from a file :
 
 ./readinputinafile filename=input.dat
 
-In both cases, no specific order is needed on the command line
- or in the file.
+In both cases, no specific order is needed.
+In both examples, no argument on the line produces an
+usage message using the function helpisneeded.
+
